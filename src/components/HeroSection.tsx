@@ -1,9 +1,28 @@
+import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import heroBg from "@/assets/hero-bg.jpg";
 import { Calendar, MapPin, ChevronDown } from "lucide-react";
 
+const TARGET_DATE = new Date("2026-04-05T07:00:00").getTime();
+
+const useCountdown = () => {
+  const [now, setNow] = useState(Date.now());
+  useEffect(() => {
+    const id = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(id);
+  }, []);
+  const diff = Math.max(0, TARGET_DATE - now);
+  return {
+    days: Math.floor(diff / 86400000),
+    hours: Math.floor((diff % 86400000) / 3600000),
+    minutes: Math.floor((diff % 3600000) / 60000),
+    seconds: Math.floor((diff % 60000) / 1000),
+  };
+};
+
 const HeroSection = () => {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
+  const countdown = useCountdown();
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -32,6 +51,22 @@ const HeroSection = () => {
         <p className="font-heading text-lg text-[hsl(185_60%_70%)] mb-4 italic">
           {t("hero.theme")}
         </p>
+
+        {/* Countdown */}
+        <div className="flex items-center justify-center gap-3 sm:gap-5 mb-6">
+          {(["days", "hours", "minutes", "seconds"] as const).map((unit) => (
+            <div key={unit} className="flex flex-col items-center">
+              <span className="font-display text-3xl sm:text-5xl font-black text-[hsl(0_0%_95%)] tabular-nums">
+                {String(countdown[unit]).padStart(2, "0")}
+              </span>
+              <span className="font-heading text-[10px] sm:text-xs uppercase tracking-wider text-primary mt-1">
+                {lang === "fr"
+                  ? { days: "Jours", hours: "Heures", minutes: "Min", seconds: "Sec" }[unit]
+                  : { days: "Days", hours: "Hours", minutes: "Min", seconds: "Sec" }[unit]}
+              </span>
+            </div>
+          ))}
+        </div>
 
         <div className="flex items-center justify-center gap-2 mb-10 text-[hsl(0_0%_80%)]">
           <MapPin className="w-4 h-4" />

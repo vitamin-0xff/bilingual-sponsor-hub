@@ -24,7 +24,7 @@ const ChallengesSection = () => {
           {challenges.map((ch) => (
             <div
               key={ch.key}
-              className="card-gradient rounded-xl p-6 border border-border hover:glow-cyan transition-all group text-center"
+              className="card-gradient rounded-xl p-6 border border-border hover:glow-cyan transition-all group text-center cursor-pointer"
             >
               <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
                 <ch.icon className="w-7 h-7 text-primary" />

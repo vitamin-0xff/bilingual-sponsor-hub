@@ -1,5 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Users, Trophy, UserCheck, Handshake } from "lucide-react";
+import { motion } from "framer-motion";
 
 const stats = [
   { key: "about.members", value: "150+", icon: Users },
@@ -26,14 +27,19 @@ const AboutSection = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((stat) => (
-            <div
+            <motion.div
+              whileHover={{
+                rotate: [0, 5],
+                scale: 1.05,
+              }}
+              initial={{ rotate: 0, scale: 1 }}
               key={stat.key}
               className="card-gradient rounded-xl p-6 text-center border border-border hover:glow-cyan transition-shadow group"
             >
               <stat.icon className="w-8 h-8 mx-auto mb-3 text-primary group-hover:scale-110 transition-transform" />
               <p className="font-display text-3xl font-bold text-foreground">{stat.value}</p>
               <p className="font-heading text-sm text-muted-foreground mt-1">{t(stat.key)}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

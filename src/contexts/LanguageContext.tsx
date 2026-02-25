@@ -145,6 +145,7 @@ const translations: Record<string, Record<Lang, string>> = {
 
   // Schedule
   "schedule.title": { fr: "Planning", en: "Schedule" },
+  "close": { fr: "Fermer", en: "Close" },
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);

@@ -47,7 +47,7 @@ const SponsorPacksSection = () => {
             return (
               <div
                 key={pack.key}
-                className={`card-gradient rounded-xl border-2 ${pack.styles} p-6 flex flex-col ${pack.highlight ? "scale-[1.02]" : ""}`}
+                className={`card-gradient rounded-xl border-2 ${pack.styles} p-6 flex flex-col ${pack.highlight ? "scale-[1.02]" : ""} cursor-pointer hover:scale-105  transition-transform group`}
               >
                 <div className={`inline-block self-start px-3 py-1 rounded-full text-xs font-display font-bold uppercase mb-4 ${pack.badge}`}>
                   {t(`packs.${pack.key}`)}

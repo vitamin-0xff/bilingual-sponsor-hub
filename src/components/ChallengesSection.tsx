@@ -1,5 +1,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Baby, Route, Mountain, Shield, Swords } from "lucide-react";
+import { motion } from "framer-motion";
+import { AnimatedSection, staggerContainer, staggerItem } from "./AnimatedSection";
 
 const challenges = [
   { key: "junior", icon: Baby },
@@ -15,15 +17,25 @@ const ChallengesSection = () => {
   return (
     <section id="challenges" className="py-24 px-4">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="font-display text-3xl md:text-5xl font-bold text-center mb-4 text-gradient-cyan">
-          {t("challenges.title")}
-        </h2>
-        <div className="w-20 h-1 bg-accent mx-auto rounded-full mb-12" />
+        <AnimatedSection>
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-center mb-4 text-gradient-cyan">
+            {t("challenges.title")}
+          </h2>
+          <div className="w-20 h-1 bg-accent mx-auto rounded-full mb-12" />
+        </AnimatedSection>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <motion.div
+          className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {challenges.map((ch) => (
-            <div
+            <motion.div
               key={ch.key}
+              variants={staggerItem}
+              whileHover={{ scale: 1.05, y: -5 }}
               className="card-gradient rounded-xl p-6 border border-border hover:glow-cyan transition-all group text-center cursor-pointer"
             >
               <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
@@ -35,9 +47,9 @@ const ChallengesSection = () => {
               <p className="text-xs text-muted-foreground font-body leading-relaxed">
                 {t(`challenges.${ch.key}.desc`)}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

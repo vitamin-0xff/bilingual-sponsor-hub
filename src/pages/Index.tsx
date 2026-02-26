@@ -8,6 +8,7 @@ import SponsorPacksSection from "@/components/SponsorPacksSection";
 import WhySponsorSection from "@/components/WhySponsorSection";
 import PartnersSection from "@/components/PartnersSection";
 import ContactSection from "@/components/ContactSection";
+import { SponsorM } from "@/components/SponsorM";
 
 const Index = () => {
   return (
@@ -15,11 +16,12 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <AboutSection />
-      <StatisticsSection />
       <EditionsSection />
+      <StatisticsSection />
       <ChallengesSection />
       <SponsorPacksSection />
       <WhySponsorSection />
+      <SponsorM />
       <PartnersSection />
       <ContactSection />
       <footer className="py-8 text-center border-t border-border">

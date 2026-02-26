@@ -42,6 +42,7 @@ const AboutSection = () => {
           {stats.map((stat) => (
             <motion.div
               variants={staggerItem}
+              initial={{ rotate: 0, scale: 1 }}
               whileHover={{ rotate: [0, 5], scale: 1.05 }}
               key={stat.key}
               className="card-gradient rounded-xl p-6 text-center border border-border hover:glow-cyan transition-shadow group"

@@ -16,7 +16,7 @@ const PartnersSection = () => {
   const { lang } = useLanguage();
 
   return (
-    <section id="partners" className="py-24 px-4 bg-secondary/50">
+    <section id="partners" className="py-24 px-4">
       <div className="container mx-auto max-w-5xl">
         <AnimatedSection>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-center mb-4 text-gradient-amber">

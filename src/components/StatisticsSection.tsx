@@ -55,7 +55,6 @@ const StatisticsSection = () => {
           </h2>
           <div className="w-20 h-1 bg-accent mx-auto rounded-full mb-12" />
         </AnimatedSection>
-
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
           variants={staggerContainer}

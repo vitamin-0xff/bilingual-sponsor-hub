@@ -2,6 +2,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Check, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { AnimatedSection, staggerContainer, staggerItem } from "./AnimatedSection";
+import { composeMailto } from "@/lib/utils";
 
 const features = [
   "packs.feat.logo_posters", "packs.feat.logo_social", "packs.feat.logo_wall",
@@ -42,6 +43,7 @@ const SponsorPacksSection = () => {
           {packs.map((pack) => {
             const count = packAccess[pack.key];
             return (
+              <a href={composeMailto(t("packs.email.subject"), t("packs.email.body"), "isetrrobotech@gmail.com", `${pack.key.toLocaleUpperCase()} Pack`)} className="cursor-pointer" >
               <motion.div
                 key={pack.key}
                 variants={staggerItem}
@@ -66,6 +68,7 @@ const SponsorPacksSection = () => {
                   })}
                 </ul>
               </motion.div>
+              </a>
             );
           })}
         </motion.div>

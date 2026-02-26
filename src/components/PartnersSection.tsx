@@ -19,10 +19,10 @@ const PartnersSection = () => {
     <section id="partners" className="py-24 px-4">
       <div className="container mx-auto max-w-5xl">
         <AnimatedSection>
-          <h2 className="font-display text-3xl md:text-5xl font-bold text-center mb-4 text-gradient-amber">
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-center mb-4 text-gradient-cyan">
             {lang === "fr" ? "Nos Partenaires & Sponsors" : "Our Partners & Sponsors"}
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-4" />
+          <div className="w-20 h-1 bg-accent mx-auto rounded-full mb-4" />
           <p className="text-center text-muted-foreground font-body text-sm mb-12 max-w-2xl mx-auto">
             {lang === "fr"
               ? "Nous exprimons notre profonde gratitude à nos sponsors pour leur soutien et leur confiance."

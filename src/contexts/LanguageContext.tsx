@@ -111,6 +111,14 @@ const translations: Record<string, Record<Lang, string>> = {
   "packs.feat.badge": { fr: "Logo et mention sur les badges", en: "Logo and mention on badges" },
   "packs.feat.thanks": { fr: "Remerciement et mot du représentant", en: "Thanks & representative speech" },
 
+  "packs.email.subject": {
+    "fr": "Réponse concernant le sponsoring de Robotek IR 4.0 - {{tire}}",
+    "en": "Sponsorship Response Regarding Robotek IR 4.0 - {{tire}}"
+  },
+  "packs.email.body": {
+    "fr": "Bonjour équipe Rebotek,\n\nNous sommes heureux de vous informer que notre entreprise [company] est intéressée par le sponsoring de l’événement : Robotek IR 4.0.\n\nVeuillez indiquer votre décision ci-dessous :\n\n[ ] Sponsoring confirmé\n[ ] Sponsoring non confirmé\n\nCommentaires supplémentaires :\n--------------------------------------------\n\nCordialement,\n[companyName]",
+    "en": "Hello Rebotek Team,\n\nWe are pleased to inform you that our company [companyName] is interested in sponsoring the event: Robotek IR 4.0.\n\nPlease indicate your decision below:\n\n[ ] Sponsorship Confirmed\n[ ] Sponsorship Not Confirmed\n\nAdditional comments:\n--------------------------------------------\n\nBest regards,\n[companyName]"
+  },
   // Why Sponsor
   "why.title": { fr: "Pourquoi nous sponsoriser ?", en: "Why Sponsor Us?" },
   "why.visibility": { fr: "Visibilité médiatique forte", en: "Strong media visibility" },

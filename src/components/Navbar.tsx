@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/50">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <a href="#" className="font-display text-lg font-bold tracking-wider text-primary">
+        <a href="#" className="font-display cursor-pointer text-lg font-bold tracking-wider text-primary">
           ROBOTEK IR 4.0
         </a>
 

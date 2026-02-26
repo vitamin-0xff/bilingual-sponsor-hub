@@ -46,6 +46,7 @@ const HeroSection = () => {
           <span className="text-sm font-heading font-semibold text-primary">{t("hero.date")}</span>
         </motion.div>
 
+        <a href="dossier-sponso-IR4.0-4.pdf" target="_blank" className="inline-block">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -55,6 +56,7 @@ const HeroSection = () => {
           <span className="text-gradient-cyan">ROBOTEK</span>{" "}
           <span className="text-gradient-amber">IR 4.0</span>
         </motion.h1>
+        </a>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
